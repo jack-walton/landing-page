@@ -9,6 +9,7 @@ export default function Page() {
   return (
     <section className="max-w-xl mx-auto">
       <h1 className="mb-8 text-2xl font-semibold tracking-tighter">About</h1>
+      <p className="mb-8">Writer</p>
     </section>
   );
 }
