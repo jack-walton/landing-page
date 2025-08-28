@@ -5,7 +5,7 @@ export default function Page() {
         Jack Walton
       </h1>
       <p className="mb-4">
-        {`I'm a writer, researcher, and content designer from Kansas City. This site is now new and improved`}
+        {`I'm a writer, researcher, and content designer from Kansas City. This site is now new and improved.`}
       </p>
     </section>
   );
