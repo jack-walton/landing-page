@@ -1,0 +1,76 @@
+---
+title: "Pruning the Blog: Digital Editing Tools"
+publishedAt: '2025-08-17'
+image: ""
+summary: ''
+---
+
+Over the weekend, I edited the blog content of this webpage a bit. As I did so, I developed a more methodical approach about how I create and maintain the content on this blog. I also experimented with various digital tools for writing and editing, such as AI, Vale, and Typora.
+
+## Editorial approach
+
+My approach to editing the past blog posts was primarily destructive. By that I mean that I didn't change anything other than removing parts that I thought were weak or otherwise didn't match the emerging tone of the website. I also made some decisions about how I would approach this blog, especially in regard to the tone, scope, and structure of the posts.
+
+### Destructive editing
+
+I felt that it would somewhat defeat the point of a blog if I changed the content in significant ways after the original post. So other than minor adjustments to sentence structure, the only change I made to previous posts was to delete sections that I no longer felt worked. In the future, I might even remove entire posts from the blog if I don't feel that they make a meaningful contribution to the website. I view this approach sort of like pruning.
+
+### Tone and scope
+
+Most of the sections that I removed didn't fit in with the general tone that I've begun to set for this blog. I had originally structured some older blog posts more like essays or personal narratives. Moving forward, I want the posts to be rather dry, technical summaries of my activities on GitHub (with maybe a dash of personality). I can imagine that, at some point in the future, this blog might shift into something different. But for now I plan to write the posts like creative, first-person release notes.
+
+### Granularity
+
+One advantage of writing these posts in [MDX](https://mdxjs.com/docs/what-is-mdx/) is that my website automatically converts the Markdown headings to anchor links. That way, I can link to specific sections of the post. As I've written more blog posts, I sometimes find myself referencing things from previous posts, and I think it would be helpful if the heading structure were granular. That is, I want essentially every paragraph to be somewhat self-contained and have its own heading. That way, I can point to specific pieces of content in the future. This approach also makes it easier to write the posts, as I can map out exactly what I want to say before I write.
+
+
+
+## Digital tools for editing
+
+Aside from the broader aesthetic decisions I made, I also implemented some specific tools to help with the editing of this website. I experimented with different AI prompts to assist with the process. I also used the Vale prose linter to automate some basic proofreading tasks. Finally, I began to use Typora, a lightweight Markdown editor, to write the drafts for these posts.
+
+### Large language models
+
+I've had mixed results with using AI as a writing tool. I'm not usually satisfied with the quality of the prose that it generates, so I don't use it for that task. A large part of why I write at all is to process and systemize information myself. If I used AI to generate content, that would defeat the purpose of the entire activity. I might as well have AI eat my dinner for me. The best use cases that I've found for models like Grok and ChatGPT are editorial. When you don't have an editor available for peer review, AI is better than nothing. And with firm guidance, AI models are useful for repetitive tasks.
+
+#### Large language models for review
+
+I have started to use AI to get high-level feedback on writing before I publish it. I find that this approach works best when you use AI earlier in the draft process. It also works best if you focus on broader, thematic issues with the writing and only prompt the AI one or two times. After three prompts, AI usually starts to hallucinate minor grammar issues. I don't use AI to change the content at all, only to point out areas for improvement or to get an outside perspective on the piece. I also find that ChatGPT is a little better at this than Grok is. When I edited the blog content this weekend, I often prompted AI models with questions like:
+
+> What doesn't work in this post?
+
+Or:
+
+> What parts of this post are weird, alienating, or off-putting?
+
+The results typically were a list of certain weak sections with explanations as to why they didn't work.
+
+![ChatGPT at work](/assets/blog/digital-editing-tools/chatgpt-at-work.jpg)
+
+#### Large language models for mechanical tasks
+
+If AI identified specific weak points in a document, I then prompted it to return a version of the document with those specific sections removed. This saved me a bit of time, as this was mostly a mechanical process. I can imagine other repetitive, mechanical tasks where AI could be useful. For example, as I mentioned earlier, I want my posts to be granular and have each paragraph with its own heading. I could use AI to automatically break up blocks of prose into paragraphs of a specified length and generate headings. I could then revise the headings. Or, one time at work, I needed to convert an .SRT file (caption transcript) from a video into a written help page. I could have had the AI strip out all the metadata from that file and leave only the spoken content organized in a basic help structure.
+
+### Vale
+
+AI isn't the best tool for basic proofreading tasks. I've tried that before, and sometimes AI will leave rather glaring typos and errors in the document. Other times, it will hallucinate issues that aren't there. Instead, a more programmatic tool like [Vale](https://vale.sh/) is better for this use case. Vale is a command-line tool that you can use to enforce specific style guide rules. You can upload a style guide and the tool will scan a document and point out areas where your document deviates from it. Vale is excellent at detecting spelling errors, basic grammar issues, repeated words, and passive voice. I configured my instance of Vale to use the Microsoft Writing Style Guide. I updated the configuration file for my own purposes. For example, I changed the standard `[*.{md}]`  to`[*.{mdx}]` so that it would read my posts correctly.
+
+```go
+StylesPath = styles
+
+MinAlertLevel = suggestion
+
+Packages = Microsoft, MDX
+
+[*.{mdx}]
+
+BasedOnStyles = Vale, Microsoft
+```
+
+I'll also have to customize the style guide specifically. For example, the Microsoft Writing Style Guide flags any usage of first-person pronouns, which are an important part of my style.
+
+![Vale in action](/assets/blog/digital-editing-tools/vale-at-work.jpg)
+
+### Typora
+
+I wrote my previous posts in Visual Studio Code, which is the IDE that I use to develop the website in general. But for the blog content in particular, I have started to use [Typora](https://typora.io/) to write the drafts. Typora is a specialized Markdown editor that automatically converts Markdown code into a visual preview. You can see what the rendered document will look like when you deploy it. I find that it makes the writing process more pleasant, as the UX of Typora caters to *writers* rather than *developers*. It makes it easier to treat the blog posts as writing rather than code. I'll still have to switch to Visual Studio Code running a `dev` environment to preview some content. I use an older MacBook, which isn't well supported, so I have some compatibility issues with Typora. For example, I can't preview images or diagrams in Typora.

@@ -1,11 +1,50 @@
+import Link from 'next/link';
+
+export const metadata = {
+  title: 'Projects',
+  description: 'A collection of my work in UX design, documentation, and digital humanities.',
+};
+
 export default function Page() {
   return (
-    <section>
-      <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
-        Jack Walton
-      </h1>
-      <p className="mb-4">
-        {`I'm a writer, researcher, and content designer from Kansas City. This site is now new and improved.`}
+    <section className="max-w-xl mx-auto">
+      <h1 className="mb-8 text-2xl font-semibold tracking-tighter">Projects</h1>
+
+      <h2 className="font-semibold text-xl mb-4 tracking-tighter">Oracle Health</h2>
+      <p className="mb-8">
+        I'm on the design team working to develop the next generation of healthcare products at{' '}
+        <Link
+          href="https://www.oracle.com/health/"
+          className="underline decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2 decoration-[0.1em] transition-all"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Oracle
+        </Link>.
+        My work focuses on writing user interface copy and designing user assistance documentation. I joined Oracle through its{' '}
+        <Link
+          href="https://www.oracle.com/news/announcement/oracle-buys-cerner-2021-12-20/"
+          className="underline decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2 decoration-[0.1em] transition-all"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          acquisition of Cerner
+        </Link>.
+        This project is ongoing.
+      </p>
+
+      <h2 className="font-semibold text-xl mb-4 tracking-tighter">Documentation</h2>
+      <p className="mb-8">
+        I created this{' '}
+        <Link
+          href="https://docs.jackwalton.xyz"
+          className="underline decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2 decoration-[0.1em] transition-all"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          documentation
+        </Link>{' '}
+        site using Next.js with the Nextra theme. The site currently includes some case studies in user assistance documentation. In the future, I plan to use this site to document my projects and research.
       </p>
     </section>
   );

@@ -1,0 +1,95 @@
+---
+title: "Some UI Enhancements: Icons and Microcopy"
+publishedAt: '2025-08-15'
+image: ""
+summary: ''
+---
+
+Over the last week, I made some minor enhancements to the user interface of this website. I added some images and metadata to both `jackwalton.xyz` and `help.jackwalton.xyz`. I also updated the microcopy in the `Search` component of the help pages.
+
+## Icons
+
+I updated the `icon` metadata for `jackwalton.xyz` to display a custom shortcut icon in web browsers:
+
+```
+icons: {
+    icon: '/icon.png',
+    shortcut: '/icon.png',
+},
+```
+
+This change will ensure that browser tabs and bookmarks display a custom icon.
+
+I created `icon.png` in Figma. I experimented with using a logo that I had designed. But I want this website to mostly focus on prose style and typography, so I went with something simpler.
+
+I have been listening to a lot of [Gesaffelstein](https://en.wikipedia.org/wiki/Gesaffelstein) as I've been coding this website. I took inspiration for `icon.png` from the cover of [Hyperion](https://en.wikipedia.org/wiki/Hyperion_(Gesaffelstein_album)), which is a solid, black block. I decided to do something similar:
+
+![The logo I designed](/assets/blog/branding/icon-demo.png)
+
+I picked the color, `#a19595`, out of the style sheet from this website to ensure that it harmonizes with the rest of the current design.
+
+## Social preview
+
+I also added `images` metadata (the "twitter card") so that the website would have a preview image when people share it on social media or in text messages:
+
+```
+images: [{
+    url: 'https://jackwalton.xyz/thumbnail.png',
+    width: 1200, // Updated to recommended size
+    height: 630, // Updated to recommended size
+    alt: 'Jack Walton',
+    type: 'image/png',
+}],
+```
+
+For the social preview image, I continued with the minimalistic approach I took with the `shortcut` icon. I took inspiration from the Los Angeles Apparel social preview image:
+
+![The Los Angeles Apparel Logo](/assets/blog/branding/losangeles-apparel-logo.png)
+
+I created something in the same vein. Again, I used `#a19595` for the color and I used the Geist font so that the typography would harmonize with the rest of the website:
+
+![The social preview I designed](/assets/blog/branding/twitter-card-demo.png)
+
+I also made a version of this card for the `help.jackwalton.xyz` subdomain:
+
+![The twitter card for the Help Pages subdomain](/assets/blog/branding/help-pages-twitter-card-demo.png)
+
+## Microcopy
+
+In [a previous post](./open-source), I mentioned that I couldn't figure out how to update the placeholder text in the `Search` component in `help.jackwalton.xyz`. I figured it out. My main problem was that I tried to import the component from the wrong library. The corrected code looks more like this:
+
+```tsx
+import {Search} from 'nextra/components'
+
+//...
+
+const search = (
+    <Search placeholder={"Search the help pages"}/>
+)
+
+//...
+
+export default async function RootLayout({children}) {
+    return (
+
+        //...
+
+        <Layout
+            
+            //...
+
+            search={search}
+
+            //...
+
+        </Layout>
+
+       //...
+    )
+}
+```
+
+With this update, I changed the placeholder copy for the search bar in the Help Pages from "Search the documentation..." to "Search the help pages." I think this is a slight improvement in tone. And it's a bit more accurate too. The word "documentation" implies something more technical than a simple help page.
+
+![The new search bar copy](/assets/blog/branding/search-bar.png)
+

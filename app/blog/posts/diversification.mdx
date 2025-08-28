@@ -1,0 +1,74 @@
+---
+title: "Diversifying the Portfolio: Adding Hugo and Jekyll Projects"
+publishedAt: '2025-08-25'
+image: ""
+summary: ''
+---
+
+Over this last weekend, I added some more projects to my portfolio. Everything that I've done with this website so far has been using Next.js, both the main `jackwalton.xyz` page and the Nextra site, `docs.jackwalton.xyz`. I like Next.js a lot, but I wanted to diversify my portfolio so that I had projects that used multiple frameworks. I feel like this will help me think about web development in a more conceptual way rather than relying on the muscle memory of one framework.
+
+All of the coding and development work that I have done so far has been to create [static site generators](https://en.wikipedia.org/wiki/Static_site_generator). These applications create websites where the content does not change. They can be contrasted with dynamic web pages, such as Netflix, which displays very different content depending on who is looking at it. As a technical writer (and writer generally), static content is what I intend to contribute to the internet. So I think it makes sense to focus my development work on static site generators.
+
+Next.js is a powerful framework to develop static site generators. But I wanted to experiment with others so that I could better understand the static site generator ecosystem. I decided to add both Hugo and Jekyll projects to my portfolio.
+
+
+
+## Jekyll - The Resume GitHub Page
+
+**Project link**: [Resume](https://jack-walton.github.io)
+
+![A screenshot of the Jekyll project](/assets/blog/diversification/resume-screenshot.png)
+
+Jekyll is a Ruby-based framework used to build static sites. The main advantage to working with Ruby is that it's [designed to be fun and cute](https://rubyonrails.org/doctrine#optimize-for-programmer-happiness). It's hard to explain, but the code is, like, [kawaii](https://en.wikipedia.org/wiki/Kawaii). It's an older framework than Next.js or Hugo and it has well developed documentation, libraries, and community support. For example,  it's the default framework for GitHub Pages. In many ways, it's sort of the classic static site generator, and I wanted to have a project built with it. I use GitHub for version control, and not having a GitHub page felt like money left on the table. It's free real estate.
+
+### What I built
+
+I made a simple Jekyll site to host my resume. The website is personally useful. While LinkedIn is a more feature-rich, social way to host your resume, you can't just download your resume from LinkedIn and send it to recruiters easily. With my new Jekyll site, I have a version-controlled, cloud-hosted, copy of my resume I can open with Typora and export as a PDF whenever I need. The Jekyll site also has an "about" page. Right now, the content of that page is minimal.
+
+I used the [lanyon theme](https://github.com/poole/lanyon) to build the site. It's a bit more interactive and polished than the basic Jekyll theme, [minima](https://github.com/jekyll/minima). Lanyon was designed by [Mark Otto](https://markdotto.com/), one of the lead designers behind Twitter and GitHub. Since both platforms were originally Ruby applications too, this feels like a subtle nod to that era.
+
+I left the theme mostly as it was. Obviously, I removed the boilerplate example blog posts and replaced them with my own content. The main changes that I made to the theme were to [remove the pagination](https://github.com/jack-walton/jack-walton.github.io/commit/a9dc7426f04aee518c17645c89429e856d26dffc) and reverse the layout. The theme originally had template logic to break longer posts into separate pages, but I felt like my resume didn't need that. I reversed the layout so that the navigation would match the layout from my Nextra site. To do this,  I just made a small adjustment to `_layouts/default.html` in the theme:
+
+```html
+{% include head.html %}
+
+<body class="layout-reverse">
+
+{% include sidebar.html %}
+```
+
+## Hugo - The Technical Appendix
+
+**Project link**: [Technical Appendix](https://blog.jackwalton.xyz)
+
+![A screenshot of the Hugo project](/assets/blog/diversification/blog-screenshot.png)
+
+Hugo is a lot like Jekyll. I often see them mentioned in the same posts. The main advantage of Hugo is that it is written in the Go programming language and is very fast.
+
+### What I built
+
+I had trouble deciding what to build with Hugo. I browsed the [Hugo themes page](https://themes.gohugo.io/) to get some ideas. I didn't want to build anything that would overlap with my other projects, the portfolio and blog on the main page and the documentation in the `docs` subdomain. For a while, I thought I might build a gallery. But that ultimately felt somewhat superfluous to me.
+
+I finally decided to build a blog using Hugo and migrate my blog content from the main page to the Hugo subdomain. This move had a few advantages. First, while the main page was still very fast, at 99/100 on my Speed Insights dashboard, the performance had been ticking down as I added more content. Moving the content to the subdomain pushed the speed back to 100. Also, given Hugo's fast build times, the subdomain will likely remain incredibly fast even if I add hundreds of blog posts.
+
+I used a template on Vercel, and the site built just fine in production. But I had trouble building a development site on my local machine. The problem was that the Vercel template was designed for an older version of Hugo than I had installed locally. So, first, I had to remove [several deprecated lines of code](https://github.com/jack-walton/blog/commit/41314be00304f138c501579abe0e272a2112b4af) from the template. Second, I created a `vercel.json` file to include with the build so that Vercel's environment would match the one on my local machine.
+
+#### `vercel.json`
+
+```json
+{
+  "build": {
+    "env": {
+      "HUGO_VERSION": "0.148.2"
+    }
+  }
+}
+```
+
+When I migrated the blog content from the Next.js home page to the new Hugo blog, the site built approximately five times faster on Hugo than it did in Next.js. I used the base Hugo theme, Ananke, which has more blog features out of the box than my Next.js site did. The Hugo site [paginates](https://github.com/jack-walton/blog/commit/0fbce1d360790ce20e963467cb74dca73eb68eda), has better Markdown support, and generally feels more like a blog. I'm sure I'll discover more useful features as I unpack the theme more.
+
+## Conclusion
+
+With the blog content migrated to the Hugo subdomain, I can focus the main page more sharply on a different use case: a landing page. The main page can focus on being a fast, engaging, optimized, nexus of links now that it isn't burdened with all the blog content. It can focus on doing one thing well. Next.js is a great framework for this use case. I can optimize it with Vercel's analytics components. I can plug it into A/B testing services to optimize it. I can make it highly interactive and apply modern software design techniques. I couldn't really do these things with Hugo or Jekyll.
+
+At this point, I imagine the final architecture of my portfolio website to be the main landing page with links to `blog`, `docs`, and `.design` subdomains. For what it's worth, that's how ` oracle.com` is structured. For the `design` subdomain, I plan to build a simple [Storybook](https://storybook.js.org/) site once I begin to optimize the landing page a bit more. After I've worked out an overall design system, I intend to implement design and typography across all the subdomains.

@@ -1,0 +1,80 @@
+---
+title: "Hello World: How I Made This Website"
+publishedAt: '2025-08-03'
+image: ""
+summary: ''
+---
+
+## Problem
+
+I have wanted to develop a personal website for some time now. Professionally, I needed a public portfolio. Outside of work, sometimes acquaintances have asked for my social media profiles. We would then go through the awkward process of trying to find a social media platform that we both use. I felt that I needed a site where people could learn more about me, the work I do, and how to reach me.
+
+## Solution
+
+I purchased `jackwalton.xyz` and created a personal website. I wanted it to be versatile. So in terms of content design, I wanted to aim for something between [a portfolio for a UX executive](https://darmourdesign.com/) and a [linktree for an artist](https://linktr.ee/marissanadler).
+
+After some research, I decided to host my website on Vercel. I had tried other options, such as GitHub Pages. I found GitHub Pages to be too open ended. I found it daunting to build a professional-looking website totally from scratch. At the same time, I didn't want to use a totally drag-and-drop solution such as Wordpress. I work in the tech industry, so I wanted to at least demonstrate that I could develop front-end interfaces. Vercel worked for me because it provides a full web hosting solution along with templates. I deployed a clone of the [portfolio starter kit](https://vercel.com/templates/portfolio/portfolio-starter-kit) and customized it.
+
+I began to rewrite the copy in the template so that it was about me and I wired up the social media links with my own sites. But I had a couple of deeper issues with the design and logic of the application that required that I get under the hood a bit.
+
+### The blog dates were uneven
+
+The first thing I noticed as I began to experiment with the template was that the dates next to the blog posts were sometimes displayed unevenly. Depending on the size of the screen, the date was typically displayed on one line and the title of the post on another. But I noticed that if the date exceeded a certain character count, the date would wrap around on two lines. I felt like this made it harder to read the website, as the layout wouldn't necessarily be uniform.
+
+![The date wraps around on two lines.](/assets/blog/hello-world/bad-date.png)
+
+At first, I tried to alter the CSS rules related to the blog posts to try to fix this issue. But I couldn't fix the issue that way without completely redesigning the entire application, which would defeat the purpose of using a template.
+
+Eventually, I decided to enhance the React component that displayed the blog posts. Each blog post has metadata that includes the title and date. [The original code for the `BlogPosts` component](https://github.com/jack-walton/jackwalton.xyz/blob/a26a7a9da7fecccb1d4b33fa546b82a4d49bd1f2/app/components/posts.tsx) displayed the date based on data imported from a utility that processes the post's metadata.
+
+[I changed the code](https://github.com/jack-walton/jackwalton.xyz/commit/ade0d2a3fa017211142ed220e338b1fe267b9caa) to shorten month names like 'September' to 'Sep' to save space. This change ensures that the date won't wrap onto multiple lines. No matter what date I use in the post's metadata, the `BlogPosts` component displays the date on a single line. This makes the page easier to scan.
+
+![The date doesn't wrap around lines.](/assets/blog/hello-world/good-date.png)
+
+### The home page displayed too many blog posts
+
+A problem that I suspected the app may have in terms of readability was how long the list of blog posts would be. I wondered whether the `BlogPosts` component would display every post on both the home page and the blog page.
+
+To test this, I added several blank posts to the `posts` folder. As I suspected, the page displayed all the posts.
+
+![Several blog posts crowd up the screen space.](/assets/blog/hello-world/too-many-blog-posts.png)
+
+I viewed this as a problem. I wanted the home page to be brief and scannable, and an endless list of posts would impede that. The user would have to know to scroll to the bottom to see the social links. I updated the code to return two separate React components: the original `BlogPosts` component that displays every post, and a second component, `RecentBlogPosts`. The new component only displays the three most recent blog posts. I updated the app so that the original component was only routed to the "blog" page and the new, truncated component would route to the "home" page. The enhancement was a success. The home page only displays the three most recent blog posts.
+
+![The home page only the three most recent blog posts.](/images/hello-world/enough-blog-posts.png)
+
+The blog page displays all the blog posts.
+
+![The blog page displays all the blog posts.](/assets/blog/hello-world/all-the-blog-posts.png)
+
+This is an improvement in terms of readability. All the content of the home page is visible without scrolling on my iPhone 14.
+
+### Qualitative analysis
+
+I then ran the page by some friends to get their opinion. The sample size was small, but I was able to collect both qualitative and quantitative data that I found helpful. Most of the qualitative data was positive.
+
+> the design is super clean and it’s very easy to navigate
+
+> it’s simple and functional
+
+> looked through it on desktop and mobile. Looks good from what I can tell! It toggles better dark and light mode on mobile which is neat
+
+But one person had some constructive feedback about the content design.
+
+> the only thing i found confusing is that when you click “blog” it’s almost the exact same thing as the “home” page. maybe it will be different when there are more blogs
+
+I agreed with this friend. In fact, this was something I thought about when I first began work on the website. So I added a heading to the "home" page to indicate that the posts displayed there were recent ones. Also, I added copy to the "blog" page to describe what that page was and to differentiate it from the home page.
+
+I used [ANDI](https://www.ssa.gov/accessibility/andi/help/install.html) to conduct some basic accessibility testing to ensure that the website was compliant with the [Web Content Accessibility Guidelines](https://www.w3.org/TR/WCAG21/). All elements seemed to provide screen reader information as expected.
+
+### Quantitative analysis
+
+The quantitative data seemed to support the positive experience my friends described. The bounce rate, the percentage of visitors who leave after viewing one page, was 15%. Any rate below 40% is good. This rate indicates that my users found the website engaging.
+
+![A graph that displays web analytics data.](/assets/blog/hello-world/web-analytics.jpg)
+
+Also, the speed insights for the website earned a perfect score. This indicates that the page loads quickly and doesn't lag excessively when you select links. This data point is an important part of a good user experience.
+
+![A dashboard that displays speed insights data.](/assets/blog/hello-world/speed-insights.jpg)
+
+

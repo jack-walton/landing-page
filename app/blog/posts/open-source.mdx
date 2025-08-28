@@ -1,0 +1,28 @@
+---
+title: "Adding the Help Pages"
+publishedAt: '2025-08-10'
+image: ""
+summary: ''
+---
+
+**Project link**: [Help Pages](https://help.jackwalton.xyz)
+
+The main reason that I made this website was to serve as my portfolio. I had developed it enough to the point that I thought that it served as a cool link-in-bio. But I wanted it to display some of my professional projects too. As I played around with Vercel some more, I noticed that their templates page had a lot of options for documentation sites. I'm a technical writer, so I felt like creating a set of documentation pages would be a good next step for my portfolio.
+
+I used the [Nextra: Docs Starter Kit](https://vercel.com/templates/next.js/documentation-starter-kit). Vercel sponsors this starter kit and it uses their Next.js framework, which is the same framework that I used to make the website you're reading now. Moreover, Nextra has a robust set of [documentation](https://nextra.site/docs). It seems like a solution that I could perhaps develop expertise on and use in my professional life. So I cloned the template repository and got to work making my own help pages.
+
+## Help from the open source community
+
+When I attempted to build the project on my computer, I ran into dependency issues. I hacked away at it for several hours, ran my error logs by Grok, read the Nextra documentation, but nothing worked. The template just wouldn't build. I found a [GitHub issue](https://github.com/shuding/nextra/issues/4320) where several people had the same problem. Another GitHub user, [phucbm](https://github.com/phucbm), had figured out the issue and supplied a [working template](https://github.com/phucbm/nextra-docs-starter).
+
+## Creating the site
+
+For the content, I used a set of pages that I had made as part of a speculative project some time ago. Originally, I had deployed them as a [Jekyll](https://jekyllrb.com/) sites. But the Nextra template also worked with markdown, so I figured I could swap the markdown files.
+
+### Defining the tone and structure
+
+After I swapped in my markdown files, I noticed some issues with my content. The page navigation bar on the right side of the page was too wordy. I decided to consolidate some list steps into a more heading-like copy. Nextra's `Steps` component, which styles headings as numbered steps, helped with this. As I moved my old Jekyll content to the new Nextra site, I felt like the content was too rigidly structured. Every sentence was part of a list. Rather than a cold cascade of steps, a hail of jagged lists, I wanted the pages to be a flow of friendly content. I wanted it to read like someone was casually explaining things to the reader. I also became more interested in the visual aesthetics of the page. I began to reexamine the balance of prose to images. I decided to reserve lists for things that were explicitly lists, such as legends to picture elements. I no longer felt that it was necessary, or even helpful, to have every sentence broken out as a step.
+
+### Search bar microcopy
+
+For the UI text, I wanted to change the placeholder text in the `Search` component. The theme's default is "Search documentation..." and I didn't feel that this matched the tone of the site. This site is more of help pages site than a "documentation" site *per se*. According to the Nextra documentation, [you can change this placeholder text](https://nextra.site/docs/built-ins/search). However, after playing around with the code for a while, I couldn't figure out how to do it. I decided to let it be for now, something I can iterate on in [the future](https://jackwalton.xyz/blog/tidy-up-branding#microcopy).
