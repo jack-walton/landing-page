@@ -27,7 +27,7 @@ export default function Page() {
         <Link
           href="https://www.oracle.com/news/announcement/oracle-buys-cerner-2021-12-20/"
           className="underline decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2 decoration-[0.1em] transition-all"
-          target="_self"
+          target="_blank"
           rel="noopener noreferrer"
         >
           acquisition of Cerner
@@ -44,7 +44,7 @@ export default function Page() {
         <Link
           href="https://blog.jackwalton.xyz"
           className="underline decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2 decoration-[0.1em] transition-all"
-          target="_blank"
+          target="_self"
           rel="noopener noreferrer"
         >
           tech blog
