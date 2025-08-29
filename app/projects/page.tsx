@@ -58,10 +58,10 @@ export default function Page() {
         site using Next.js with the Nextra theme. The site currently includes some case studies in user assistance documentation. In the future, I plan to use this site to document my projects and research.
       </p>
 
-      <h2 className="mt-12 mb-8 text-xl font-semibold tracking-tighter">
+      <h2 className="font-semibold text-xl mb-4 tracking-tighter">
         CODICES Digital Humanities Lab
       </h2>
-      <p className="mb-4">
+      <p className="mb-8">
         I published a peer-reviewed{' '}
         <Link
           href="https://differentvisions.org/homage-to-medieval-langres/"
