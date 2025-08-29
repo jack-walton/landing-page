@@ -23,16 +23,26 @@ export default function Page() {
         I'm a writer, researcher, and content designer currently based out of Kansas City.
       </p>
 
-      <h2 className="font-semibold text-xl mb-4 tracking-tighter">Favorite album right now</h2>
-      <iframe
-      style={{ border: 0, width: '350px', height: '470px' }}
-      src="https://bandcamp.com/EmbeddedPlayer/album=4200695786/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/transparent=true/"
-      seamless
-    >
-      <a href="https://reptilemusic.bandcamp.com/album/gloria-de-oliveira-fascination-compilation-album">
-        GLORIA DE OLIVEIRA - Fascination (Compilation Album) by GLORIA DE OLIVEIRA
-      </a>
-    </iframe>
+      <h2 className="font-semibold text-xl mb-4 tracking-tighter">Check out my favorite album right now</h2>
+      <div className="mb-8">
+      <iframe style={{ border: 0, width: '100%', height: '120px' }} src="https://bandcamp.com/EmbeddedPlayer/album=4200695786/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://reptilemusic.bandcamp.com/album/gloria-de-oliveira-fascination-compilation-album">GLORIA DE OLIVEIRA - Fascination (Compilation Album) by GLORIA DE OLIVEIRA</a></iframe>
+      </div>
+
+      <h2 className="font-semibold text-xl mb-4 tracking-tighter">Check out my latest playlist</h2>
+          
+      <div className="mb-8">
+          <iframe
+      data-testid="embed-iframe"
+      style={{ borderRadius: '12px' }}
+      src="https://open.spotify.com/embed/playlist/47CsxQufK0enHxi3akbiO1?utm_source=generator"
+      width="100%"
+      height="352"
+      frameBorder="0"
+      allowFullScreen
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy"
+    />
+    </div>
 
     </section>
   );
