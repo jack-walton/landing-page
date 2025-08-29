@@ -14,7 +14,7 @@ const navItems = {
 
 export function Navbar() {
   return (
-    <aside className="mb-8 mt-8 tracking-tighter text-center border-b-1 border-t-1 border-gray-300 py-4"> {/* Removed -ml-[8px] to avoid offset */}
+    <aside className="mb-4 mt-4 tracking-tighter text-center border-b-1 border-t-1 border-gray-300 py-4"> {/* Removed -ml-[8px] to avoid offset */}
       <div className="lg:sticky lg:top-20">
         <nav
           className="flex flex-row items-center justify-center relative px-0 pb-0 fade md:overflow-auto md:relative"
