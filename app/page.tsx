@@ -24,16 +24,6 @@ export default function Page() {
         I'm a writer, researcher, and content designer currently based out of Kansas City.
       </p>
 
-      <h2 className="font-semibold text-xl mb-4 tracking-tighter">Follow me on Twitter</h2>
-      <Tweet id="1858197154772250842" fallback={<p>Unable to load tweet.</p>} />
-
-      <h2 className="font-semibold text-xl mb-4 tracking-tighter">Follow me on Bluesky</h2>
-      <PostThread
-      params={{
-        did: "did:plc:pq6i4provjmntc3dcr25d2tf",
-        rkey: "3lb77sszijs2b",
-      }}
-    />
     </section>
   );
 }
