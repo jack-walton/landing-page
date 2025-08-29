@@ -11,18 +11,21 @@ export default function Page() {
   return (
     <section className="max-w-xl mx-auto">
       <h1 className="mb-8 text-2xl font-semibold tracking-tighter">Jack Spencer Walton</h1> 
-        <Image
-    src="/headshot.png"
-    alt="Jack Spencer Walton"
-    width={1000}
-    height={200}
-    className="rounded-full"
-  />
-   <p className="mt-8 mb-8">
+       
+   <p>
     I'm a writer, researcher, and content designer. For the last four years, I've worked as a technical writer for the UX Design organization at Oracle, where I work on user assistance documentation and write user interface copy for healthcare products. I graduated <em>magna cum laude</em> from the University of Missouri - Kansas City with a BA in English and a minor in medieval and early modern studies. While in school, I worked as a research assistant for CODICES Digital Humanities Lab.
   </p>
-  
 
+<div data-theme="system" className="tweet-container">
+      <Tweet
+        id="1858197154772250842"
+        options={{
+          conversation: 'none',
+          cards: 'hidden',
+          lang: 'en',
+        }}
+      />
+    </div>
     </section>
   );
 }
