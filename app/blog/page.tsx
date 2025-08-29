@@ -2,7 +2,7 @@ import { BlogPosts } from 'app/components/posts';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Projects',
+  title: 'Blog',
   description: 'A collection of my work in UX design, documentation, and digital humanities.',
 };
 
