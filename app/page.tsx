@@ -1,5 +1,6 @@
-import Link from 'next/link';
-import Image from 'next/image'
+import Image from 'next/image';
+import { Tweet } from 'react-tweet';
+import { PostThread } from "react-bluesky-embed";
 
 export const metadata = {
   title: 'Jack Walton',
@@ -24,31 +25,16 @@ export default function Page() {
       </p>
 
       <h2 className="font-semibold text-xl mb-4 tracking-tighter">Follow me on Twitter</h2>
-      <div className='mb-8'>
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">I am not a &quot;tweet deleter&quot;, I am a creative professional with strong revision skills and sound editorial judgement.</p>&mdash; Jack (@suburbanrunaway) <a href="https://twitter.com/suburbanrunaway/status/1858197154772250842?ref_src=twsrc%5Etfw">November 17, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+      <Tweet id="1858197154772250842" fallback={<p>Unable to load tweet.</p>} width="100%" />
 
-      </div>
-      <h2 className="font-semibold text-xl mb-4 tracking-tighter">Check out my favorite album right now</h2>
-      <div className="mb-8">
-      <iframe style={{ border: 0, width: '100%', height: '120px' }} src="https://bandcamp.com/EmbeddedPlayer/album=4200695786/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://reptilemusic.bandcamp.com/album/gloria-de-oliveira-fascination-compilation-album">GLORIA DE OLIVEIRA - Fascination (Compilation Album) by GLORIA DE OLIVEIRA</a></iframe>
-      </div>
-
-      <h2 className="font-semibold text-xl mb-4 tracking-tighter">Check out my latest playlist</h2>
-          
-      <div className="mb-8">
-          <iframe
-      data-testid="embed-iframe"
-      style={{ borderRadius: '12px' }}
-      src="https://open.spotify.com/embed/playlist/47CsxQufK0enHxi3akbiO1?utm_source=generator"
-      width="100%"
-      height="352"
-      frameBorder="0"
-      allowFullScreen
-      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-      loading="lazy"
+      <h2 className="font-semibold text-xl mb-4 tracking-tighter">Follow me on Bluesky</h2>
+      <PostThread
+      params={{
+        did: "did:plc:pq6i4provjmntc3dcr25d2tf",
+        rkey: "3lb77sszijs2b",
+      }}
+      theme="system"
     />
-    </div>
-
     </section>
   );
 }
