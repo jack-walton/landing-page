@@ -1,4 +1,4 @@
-# Portfolio and Blog
+# Portfolio
 
 This is a professional portfolio built to display my work, host technical blog posts, and provide links to my social media and contact information. This application was developed based on the Vercel Portfolio Starter Kit (https://vercel.com/templates/next.js/portfolio-starter-kit).
 
