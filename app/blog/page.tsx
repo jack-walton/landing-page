@@ -10,7 +10,7 @@ export default function Page() {
   return (
     <section className="max-w-xl mx-auto">
       <h1 className="mb-8 text-2xl font-semibold tracking-tighter">Blog</h1>
-      <p className="mb-8">Lately I've been writing about my web development projects. But I plan to write about all sorts of things in this blog.</p>
+      <p className="mb-8">This blog is mostly notes and  about my web development projects.</p>
 
       <h2 className="font-semibold text-xl mb-4 tracking-tighter">Posts</h2>
       <BlogPosts />
