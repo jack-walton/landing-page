@@ -25,7 +25,7 @@ export default function Page() {
       </p>
 
       <h2 className="font-semibold text-xl mb-4 tracking-tighter">Follow me on Twitter</h2>
-      <Tweet id="1858197154772250842" fallback={<p>Unable to load tweet.</p>} width="100%" />
+      <Tweet id="1858197154772250842" fallback={<p>Unable to load tweet.</p>} />
 
       <h2 className="font-semibold text-xl mb-4 tracking-tighter">Follow me on Bluesky</h2>
       <PostThread
