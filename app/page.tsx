@@ -33,7 +33,6 @@ export default function Page() {
         did: "did:plc:pq6i4provjmntc3dcr25d2tf",
         rkey: "3lb77sszijs2b",
       }}
-      theme="system"
     />
     </section>
   );
