@@ -13,7 +13,7 @@ export default function Page() {
       <h1 className="mb-8 text-2xl font-semibold tracking-tighter">Jack Spencer Walton</h1>
 
       <Image
-        src="/headshot.jpg"
+        src="/headshot.png"
         alt="Jack Spencer Walton"
         width={1000}
         height={200}
