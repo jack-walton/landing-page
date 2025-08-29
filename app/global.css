@@ -129,7 +129,7 @@ pre::-webkit-scrollbar {
 }
 
 img {
-  @apply rounded-lg border border-neutral-200 dark:border-neutral-900 overflow-hidden mb-8;
+  @apply rounded-lg border border-neutral-200 dark:border-neutral-900 overflow-hidden;
 }
 
 pre {

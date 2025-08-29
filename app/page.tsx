@@ -18,8 +18,8 @@ export default function Page() {
     height={200}
     className="rounded-full"
   />
-   <p className="flex-1 mb-8">
-    I'm a writer, researcher, and content designer. For the last four years, I've worked as a technical writer for the UX Design organization at Oracle, where I work on user assistance documentation and write user interface copy for healthcare products. I graduated <em>magna cum laude</em> from the University of Missouri - Kansas City with a BA in English and a minor in medieval and early modern studies. While in school, I worked as a research assistant for CODICES Digital Humanities Lab. I am an Eagle Scout.
+   <p className="mt-8 mb-8">
+    I'm a writer, researcher, and content designer. For the last four years, I've worked as a technical writer for the UX Design organization at Oracle, where I work on user assistance documentation and write user interface copy for healthcare products. I graduated <em>magna cum laude</em> from the University of Missouri - Kansas City with a BA in English and a minor in medieval and early modern studies. While in school, I worked as a research assistant for CODICES Digital Humanities Lab.
   </p>
   
 
