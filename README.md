@@ -22,8 +22,8 @@ This is a personal website built to display my work, host blog posts, and provid
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/jack-walton/jackwalton.xyz.git
-   cd jackwalton.xyz
+   git clone https://github.com/jack-walton/blog.git
+   cd blog
    ```
 2. Install dependencies:
    ```bash
