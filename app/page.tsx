@@ -12,17 +12,24 @@ export default function Page() {
     <section className="max-w-xl mx-auto">
       <h1 className="mb-8 text-2xl font-semibold tracking-tighter">Jack Spencer Walton</h1>
 
-      <Image
-        src="/headshot.png"
-        alt="Jack Spencer Walton"
-        width={1000}
-        height={200}
-        className="rounded-full mb-4"
-      />
-
       <p className="mb-8">
         I'm a writer, researcher, and content designer currently based out of Kansas City.
       </p>
+
+
+
+    <div data-theme="system" style={{ maxWidth: '500px', margin: '0 auto' }}>
+      <Tweet id="1858197154772250842" />
+    </div>
+
+
+      <Image
+        src="/headshot.png"
+        alt="Jack Spencer Walton"
+        width={350}
+        height={200}
+        className="rounded-full mb-4"
+      />
 
     </section>
   );
