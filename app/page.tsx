@@ -16,6 +16,15 @@ export default function Page() {
         I'm a writer, researcher, and content designer currently based out of Kansas City.
       </p>
 
+            <Image
+        src="/headshot.png"
+        alt="Jack Spencer Walton"
+        width={1000}
+        height={200}
+        className="rounded-full mb-4"
+      />
+
+
 
 
     <div data-theme="system" style={{ maxWidth: '500px', margin: '0 auto' }}>
@@ -23,13 +32,6 @@ export default function Page() {
     </div>
 
 
-      <Image
-        src="/headshot.png"
-        alt="Jack Spencer Walton"
-        width={350}
-        height={200}
-        className="rounded-full mb-4"
-      />
 
     </section>
   );
