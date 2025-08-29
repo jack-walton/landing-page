@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { Tweet } from 'react-tweet';
 import { PostThread } from "react-bluesky-embed";
 
@@ -19,7 +18,6 @@ export default function Page() {
 <div data-theme="system" className="tweet-container">
       <Tweet
         id="1858197154772250842"
-        }}
       />
     </div>
     </section>
