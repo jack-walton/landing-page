@@ -23,6 +23,17 @@ export default function Page() {
         I'm a writer, researcher, and content designer currently based out of Kansas City.
       </p>
 
+      <h2 className="font-semibold text-xl mb-4 tracking-tighter">Favorite album right now</h2>
+      <iframe
+      style={{ border: 0, width: '350px', height: '470px' }}
+      src="https://bandcamp.com/EmbeddedPlayer/album=4200695786/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/transparent=true/"
+      seamless
+    >
+      <a href="https://reptilemusic.bandcamp.com/album/gloria-de-oliveira-fascination-compilation-album">
+        GLORIA DE OLIVEIRA - Fascination (Compilation Album) by GLORIA DE OLIVEIRA
+      </a>
+    </iframe>
+
     </section>
   );
 }
