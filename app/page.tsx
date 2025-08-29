@@ -15,7 +15,7 @@ export default function Page() {
       <Image
         src="/headshot.jpg"
         alt="Jack Spencer Walton"
-        width={200}
+        width={1000}
         height={200}
         className="rounded-full mb-4"
       />
