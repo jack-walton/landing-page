@@ -1,6 +1,12 @@
+import Image from 'next/image'
+
 export default function Masthead() {
   return (
-    <h3 className="mb-8 text-5xl font-semibold tracking-tighter text-center border-gray-300">
-       Jack Walton</h3>
-      )
+    <Image
+      src="/background.jpg"
+      alt="Mountains"
+      width={1500}
+      height={400}
+    />
+  )
 }

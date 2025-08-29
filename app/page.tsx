@@ -1,15 +1,37 @@
 import Link from 'next/link';
+import Image from 'next/image'
 
 export const metadata = {
-  title: 'Projects',
+  title: 'Jack Walton',
   description: 'A collection of my work in UX design, documentation, and digital humanities.',
 };
 
 export default function Page() {
   return (
     <section className="max-w-xl mx-auto">
-      <h1 className="mb-8 text-2xl font-semibold tracking-tighter">About</h1>
-      <p className="mb-8">Writer</p>
+      <h1 className="mb-8 text-2xl font-semibold tracking-tighter">Jack Spencer Walton</h1>
+
+      <Image
+        src="/headshot.jpg"
+        alt="Jack Spencer Walton"
+        width={200}
+        height={200}
+        className="rounded-full mb-4"
+      />
+
+      <p className="mb-8">
+        I'm a writer, researcher, and content designer currently based out of Kansas City.
+      </p>
+
+<iframe
+  src="https://suburbanrunaway.substack.com/embed"
+  width="480"
+  height="320"
+  style={{ border: "1px solid #EEE", background: "white" }}
+  frameBorder="0"
+  scrolling="no"
+></iframe>
+
     </section>
   );
 }
