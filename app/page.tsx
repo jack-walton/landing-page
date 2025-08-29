@@ -25,8 +25,8 @@ export default function Page() {
 
 <iframe
   src="https://suburbanrunaway.substack.com/embed"
-  width="480"
-  height="320"
+  width="100%"
+  height="300"
   style={{ border: "1px solid #EEE", background: "white" }}
   frameBorder="0"
   scrolling="no"
