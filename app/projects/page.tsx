@@ -17,8 +17,8 @@ export default function Page() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          GitHub.
-        </Link>
+          GitHub
+        </Link>.
       </p>
 
       <h2 className="font-semibold text-xl mb-4 tracking-tighter">Oracle Health</h2>
