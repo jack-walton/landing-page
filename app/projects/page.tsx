@@ -78,15 +78,7 @@ export default function Page() {
           rel="noopener noreferrer"
         >
           qualitative and quantitative research methods
-        </Link>. I coauthored this article with my research mentor,{' '}
-        <Link
-          href="https://shss.umkc.edu/profiles/english/virginia-blanton.html"
-          className="underline decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2 decoration-[0.1em] transition-all"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Dr. Virginia Blanton
-        </Link>.
+        </Link>. I coauthored this article with my research mentor.
       </p>
 
     </section>
