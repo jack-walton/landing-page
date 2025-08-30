@@ -55,8 +55,7 @@ export default function Page() {
         >
           documentation
         </Link>{' '}
-        site using Next.js with the Nextra theme. The site currently includes some case studies in user assistance documentation. In the future, I plan to use this site to document my projects and research.
-      </p>
+        site using Next.js with the Nextra theme. The site currently includes some case studies in user assistance documentation.</p>
 
       <h2 className="font-semibold text-xl mb-4 tracking-tighter">
         CODICES Digital Humanities Lab
