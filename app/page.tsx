@@ -1,5 +1,5 @@
-import { Tweet } from 'react-tweet';
-import { PostThread } from "react-bluesky-embed";
+import { BlogPosts } from 'app/components/posts';
+
 
 export const metadata = {
   title: 'Jack Walton',
@@ -11,14 +11,16 @@ export default function Page() {
     <section className="max-w-xl mx-auto">
       <h1 className="mb-8 text-2xl font-semibold tracking-tighter">Jack Spencer Walton</h1> 
        
-   <p className="mb-8">
-    I'm a writer, researcher, and content designer. For the last four years, I've worked as a technical writer for the UX Design organization at Oracle, where I work on user assistance documentation and write user interface copy for healthcare products. I graduated <em>magna cum laude</em> from the University of Missouri - Kansas City with a BA in English and a minor in medieval and early modern studies. While in school, I worked as a research assistant for CODICES Digital Humanities Lab.
-  </p>
-<div data-theme="system">
-      <Tweet
-        id="1858197154772250842"
-      />
-    </div>
+
+  <p className="mb-8">I'm a technical writer at Oracle Design. I graduated from the University of Missouri - Kansas City with a BA in English Language and Literature and a minor in Medieval and Early Modern Studies.</p>
+
+    <p className="mb-8">Before I joined Oracle, I worked as research assistant at the university's and picked up work in the archives at the Kansas City Public Library.</p>
+      
+      <p className="mb-8">Obsessions include: clear copy, information architecture, continental literature, and ambient techno.</p>
+  
+  <h2 className="font-semibold text-xl mb-4 tracking-tighter">Thoughts</h2>
+
+  <BlogPosts />
     </section>
   );
 }
