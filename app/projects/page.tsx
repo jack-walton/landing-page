@@ -78,7 +78,7 @@ export default function Page() {
           rel="noopener noreferrer"
         >
           qualitative and quantitative research methods
-        </Link>. I coauthored this article with my research mentor, Distinguished Professor and Fulbright Scholar{' '}
+        </Link>. I coauthored this article with my research mentor,{' '}
         <Link
           href="https://shss.umkc.edu/profiles/english/virginia-blanton.html"
           className="underline decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2 decoration-[0.1em] transition-all"
